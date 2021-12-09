@@ -1,35 +1,42 @@
 window.addEventListener("load",function(){
-	const money = document.querySelector(".moneytext");
-	var check = document.querySelector(".button");
+
 	function parseData(){
-		// will be added later
-		money.innerHTML = 12124; // add random number generator
-		initialValue = 12124;
+		money.innerHTML = Math.floor(Math.random() * 100000); //parseData
+		return money.innerText; // aditionally have to return ID
 	}
 
-	document.querySelector(".button").addEventListener("click", newAdded);
-	function newAdded(){
-		check = !(check);
-		initialValue = money.innerHTML;
-	}
-	function increase(){
-		// assuming user spents 10-15 seconds on the website
-		// 'fake' increasement in money is 100-150, so each second +10 dollars;
-		if (check)
-			if (parseInt(money.innerHTML) - parseInt(initialValue) < 100) {
-				money.innerHTML++;
+	// initalize the variables
+	const money = document.querySelector(".money");
+	
+	let currentValue = parseInt(parseData()); //parse initial value and ADD currentId;
+
+	let difference = 100; // initial difference in money to make nice animation
+
+	// nicely increasing the money timer on website and increase currentValue
+	function increaseValue(increase){
+		let needTime = increase / 10;
+		const countDown = setInterval(()=>{
+			money.innerHTML++;
+			if (money.innerHTML - currentValue >= increase){
+				clearInterval(countDown);
 			}
-			else 
-				check = !(check);
-
-		// if (check){
-		// 	money.innerHTML = (parseInt(money.innerHTML) - parseInt(initialValue)) < 100 ? parseInt(money.innerHTML) + 1 : money.innerHTML; //add random number generator from 100 to 150
-		// }
+		}, 1000 * needTime / increase)
+		currentValue += difference;
 	}
 
-	parseData();
-	increasement = 100;
-	timeSpend = 10;
-	setInterval(increase, 1000 * (timeSpend/increasement))
-})
 
+	function checkNew(){
+		// let newValue = parseData();
+		console.log('from checkNew ', currentValue);
+		let newValue = currentValue + Math.floor(Math.random() * 100); // not newValue but newID
+		console.log('...differnce ', newValue - currentValue);
+		// this just for test
+		if (newValue != currentValue) 
+			increaseValue(newValue - currentValue);
+		// if currId != newId --> increase
+	}
+
+	increaseValue(difference);
+	console.log('after fake increase ',currentValue);
+	setInterval(checkNew, 50000); // change the time when it parses new data
+})

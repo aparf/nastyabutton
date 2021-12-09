@@ -1,13 +1,25 @@
 @import url(reset.css);
-
-.container{ 
+@font-face{
+    src: url(../fonts/SFProDisplay-Light.ttf);
+    font-family: "SFProDisplay";
+    font-weight: lighter;
+    font-style: normal;
+}
+.content{ 
 	display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
+    height: 100vh;
+
+    font-size: 90px;
+    font-family: "SFProDisplay";
+    font-weight: lighter;
 }
 
+.oops{
+    font-style: italic;
+}
 .money{
-
+    margin-top: 39px;
 }
