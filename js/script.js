@@ -45,5 +45,5 @@ window.addEventListener("load",function(){
 
 	console.log('before fake increase ',currentValue);
 	increaseValue(difference);
-	setInterval(checkNew, 25000, url); // change the time when it parses new data
+	setInterval(checkNew, 60000, url); // change the time when it parses new data
 })
