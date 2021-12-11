@@ -1,42 +1,49 @@
 window.addEventListener("load",function(){
 
-	function parseData(){
-		money.innerHTML = Math.floor(Math.random() * 100000); //parseData
-		return money.innerText; // aditionally have to return ID
+	// parse data from given url
+	function parseData(url){
+		// money.innerHTML = Math.floor(Math.random() * 100000); //parseData
+		let xhr = new XMLHttpRequest();
+
+		xhr.open('GET', url, false);
+		xhr.send();
+
+		if (xhr.status == 200){
+			var totalSpendings = JSON.parse(xhr.responseText)['oops_total'];
+			money.innerHTML = totalSpendings;
+			return(totalSpendings);
+		} else
+			console.log(xhr.status + ' ' + xhr.satusText);
 	}
-
-	// initalize the variables
-	const money = document.querySelector(".money");
-	
-	let currentValue = parseInt(parseData()); //parse initial value and ADD currentId;
-
-	let difference = 100; // initial difference in money to make nice animation
 
 	// nicely increasing the money timer on website and increase currentValue
 	function increaseValue(increase){
 		let needTime = increase / 10;
 		const countDown = setInterval(()=>{
 			money.innerHTML++;
-			if (money.innerHTML - currentValue >= increase){
+			console.log('current value ', currentValue, '; current difference ', currentValue - money.innerHTML);
+			if (parseInt(money.innerHTML) - (currentValue-increase) >= increase){
 				clearInterval(countDown);
 			}
 		}, 1000 * needTime / increase)
 		currentValue += difference;
 	}
 
-
-	function checkNew(){
-		// let newValue = parseData();
-		console.log('from checkNew ', currentValue);
-		let newValue = currentValue + Math.floor(Math.random() * 100); // not newValue but newID
-		console.log('...differnce ', newValue - currentValue);
-		// this just for test
-		if (newValue != currentValue) 
+	// checking whether new Data added
+	function checkNew(url){
+		let newValue = parseData(url);
+		if ((newValue+100) != currentValue) 
 			increaseValue(newValue - currentValue);
-		// if currId != newId --> increase
 	}
 
+
+	// initalize the variables
+	const money = document.querySelector(".money");
+	let url = 'https://dev.oops.finance/api/v1/public/oops_total';
+	let currentValue = parseInt(parseData(url)); //parse initial value and ADD currentId;
+	let difference = 100; // initial difference in money to make nice animation
+
+	console.log('before fake increase ',currentValue);
 	increaseValue(difference);
-	console.log('after fake increase ',currentValue);
-	setInterval(checkNew, 50000); // change the time when it parses new data
+	setInterval(checkNew, 25000, url); // change the time when it parses new data
 })
