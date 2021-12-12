@@ -10,7 +10,6 @@ window.addEventListener("load",function(){
 
 		if (xhr.status == 200){
 			var totalSpendings = JSON.parse(xhr.responseText)['oops_total'];
-			money.innerHTML = totalSpendings;
 			return(totalSpendings);
 		} else
 			console.log(xhr.status + ' ' + xhr.satusText);
@@ -21,29 +20,33 @@ window.addEventListener("load",function(){
 		let needTime = increase / 10;
 		const countDown = setInterval(()=>{
 			money.innerHTML++;
-			console.log('current value ', currentValue, '; current difference ', currentValue - money.innerHTML);
-			if (parseInt(money.innerHTML) - (currentValue-increase) >= increase){
+			console.log('current value ', currentValue, '; current difference ', money.innerHTML, ' current difference:', currentValue-money.innerHTML);
+			if ((currentValue) - parseInt(money.innerHTML) == 0){
 				clearInterval(countDown);
 			}
 		}, 1000 * needTime / increase)
-		currentValue += difference;
+		currentValue += increase;
 	}
 
 	// checking whether new Data added
 	function checkNew(url){
-		let newValue = parseData(url);
-		if ((newValue+100) != currentValue) 
+		let newValue = parseData(url) + 100;
+		console.log('new value == ', newValue, ' currentValue == ', currentValue);
+		if (newValue != currentValue){
+			console.log("no!");
 			increaseValue(newValue - currentValue);
+		}
 	}
-
 
 	// initalize the variables
 	const money = document.querySelector(".money");
 	let url = 'https://dev.oops.finance/api/v1/public/oops_total';
-	let currentValue = parseInt(parseData(url)); //parse initial value and ADD currentId;
+	let currentValue = parseInt(parseData(url)); //parse initial value
+	money.innerHTML = currentValue;
+
 	let difference = 100; // initial difference in money to make nice animation
 
-	console.log('before fake increase ',currentValue);
 	increaseValue(difference);
-	setInterval(checkNew, 60000, url); // change the time when it parses new data
+	console.log(currentValue);
+	setInterval(checkNew, 25000, url); // change the time when it parses new data
 })
