@@ -32,7 +32,7 @@
 }
 /* ------------------------------  content properties ------------------------------ */
 .content{ 
-    flex: 1;
+    /*flex: 1;*/
 }
 
 .money{
@@ -51,7 +51,7 @@
 
 /* ------------------------------  footer properties ------------------------------ */
 .footer{
-    flex: 0;
+    /*flex: 0;*/
 }
 
 .footer *{
@@ -69,7 +69,7 @@
 }
 
 /* ------------------------------ optimisation for mobile ------------------------------ */
-@media only screen 
+@media screen 
 and (max-device-width: 812px){ 
     html, body {
       overflow-y: hidden;
