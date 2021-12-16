@@ -15,11 +15,6 @@
 }
 
 /* ------------------------------ default properties ------------------------------ */
-html, body {
-    overflow-y: hidden;
-    position: fixed;
-}
-
 .page{
     margin: 0;
     overflow: hidden;
@@ -75,19 +70,22 @@ html, body {
 }
 
 /* ------------------------------ optimisation for mobile ------------------------------ */
+/*added in order to disable scrolling on iPhones*/
+html, body {
+    overflow-y: hidden;
+    position: fixed;
+}
+
 @media screen 
 and (max-device-width: 812px){
 
     .money{
-        margin: 0px;
         margin-top: 18vh;
-        font-family: "SFProRounded";
         font-size: 80px;
-        font-weight: bold;
     }
 
     .text{
-        font-size: 40px;
+
         margin-top: 16px;
         padding: 0% 17%;
         text-align: center;
@@ -109,22 +107,5 @@ and (max-device-width: 812px){
     }
 }
 
-/* ------------------------------ optimisation for tablets ------------------------------ */
 
-
-@media screen 
-and (max-device-width: 1366px){
-
-    .money{
-        margin-top: 28vh;
-    }
-
-    .company{
-        padding: 0px;
-        padding-bottom: 16vh;
-        font-size: 20px;
-/*        color: rgba(170, 165, 165, 1);*/
-        color: red;
-    }
-}
 
