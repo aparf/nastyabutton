@@ -75,12 +75,12 @@ and (max-device-width: 812px){
 
     html, body {
         overflow-y: hidden;
-        position: fixed;
+        /*position: fixed;*/
     }
 
     .money{
         margin: 0px;
-        margin-top: 22vh;
+        margin-top: 20vh;
         font-family: "SFProRounded";
         font-size: 80px;
         font-weight: bold;
@@ -103,7 +103,7 @@ and (max-device-width: 812px){
 
     .company{
         padding: 0px;
-        padding-bottom: 18vh;
+        padding-bottom: 16vh;
         font-size: 20px;
         color: rgba(170, 165, 165, 1);
     }
