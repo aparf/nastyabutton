@@ -68,7 +68,7 @@
 
 /* ------------------------------ optimisation for mobile ------------------------------ */
 @media only screen 
-  and (max-width: 812px)
+  and (max-device-width: 812px)
 /*  and (-webkit-min-device-pixel-ratio: 3)*/
   { 
     .money{
