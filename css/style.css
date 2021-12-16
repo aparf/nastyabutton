@@ -72,26 +72,33 @@
 @media only screen 
 and (max-device-width: 812px){ 
     html, body {
-      overflow-x: hidden;
+      overflow-y: hidden;
     }
     body {
-      position: relative;
+        height: auto;
+        position: relative;
+  }
+  .page{
+    height: auto;
   }
     .money{
-        margin-top: 22vh;
+        margin: 0px;
+        /*margin-top: 22vh;*/
         font-family: "SFProRounded";
         font-size: 80px;
         font-weight: bold;
     }
     .text{
     font-size: 40px;
-    margin-top: 16px;
+    margin: 0px;
+    /*margin-top: 16px;*/
     padding: 0% 17%;
     text-align: center;
     }
 
     .footer *{
-    padding: 5px 0px;
+        padding: 0px;
+    /*padding: 5px 0px;*/
     }
 
 .date{
@@ -99,8 +106,9 @@ and (max-device-width: 812px){
 }
 
 .company{
-    color: yellow;
-    padding-bottom: 18vh;
+    padding: 0px;
+    color: red;
+    /*padding-bottom: 18vh;*/
     font-size: 20px;
     /*color: rgba(170, 165, 165, 1);*/
 }
