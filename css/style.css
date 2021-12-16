@@ -18,7 +18,7 @@
 
 html, body {
     overflow-y: hidden;
-    /*position: fixed;*/
+    position: fixed;
 }
 
 .page{
@@ -107,6 +107,5 @@ and (max-device-width: 812px){
         padding-bottom: 16vh;
         font-size: 20px;
         color: rgba(170, 165, 165, 1);
-        color: green;
     }
 }
