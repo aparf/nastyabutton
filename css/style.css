@@ -68,10 +68,11 @@
 
 /* ------------------------------ optimisation for mobile ------------------------------ */
 @media only screen 
-  and (max-device-width: 812px)
-  and (-webkit-min-device-pixel-ratio: 3){ 
+  and (max-width: 812px)
+/*  and (-webkit-min-device-pixel-ratio: 3)*/
+  { 
     .money{
-        margin-top: 15%;
+        margin-top: 50%;
         font-family: "SFProRounded";
         font-size: 80px;
         font-weight: bold;
