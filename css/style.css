@@ -70,7 +70,7 @@
 
 /* ------------------------------ optimisation for mobile ------------------------------ */
 @media only screen 
-and (max-device-width: 812px){ 
+and (max-device-width: 926px){ 
     html, body {
       overflow-x: hidden;
     }
@@ -78,7 +78,8 @@ and (max-device-width: 812px){
       position: relative;
   }
     .money{
-        margin-top: 25vh;
+        /*margin-top: 25vh;*/
+        margin-top: 10vh;
         font-family: "SFProRounded";
         font-size: 80px;
         font-weight: bold;
@@ -91,7 +92,8 @@ and (max-device-width: 812px){
     }
 
     .footer *{
-    padding: 5px 0px;
+/*    padding: 5px 0px;*/
+    padding: 0px 0px;
     }
 
 .date{
@@ -100,7 +102,7 @@ and (max-device-width: 812px){
 
 .company{
     color: red;
-    padding-bottom: 22px;
+    /*padding-bottom: 22px;*/
     font-size: 20px;
     /*color: rgba(170, 165, 165, 1);*/
 }
