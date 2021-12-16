@@ -71,10 +71,11 @@
 /* ------------------------------ optimisation for mobile ------------------------------ */
 @media screen 
 and (max-device-width: 812px){ 
-    html, body {
+/*    html, body {
       overflow-y: hidden;
       position: fixed;
-    }
+    }*/
+
     .money{
         margin: 0px;
         /*margin-top: 22vh;*/
@@ -101,7 +102,7 @@ and (max-device-width: 812px){
 
 .company{
     padding: 0px;
-    color: green;
+    color: red;
     /*padding-bottom: 18vh;*/
     font-size: 20px;
     /*color: rgba(170, 165, 165, 1);*/
