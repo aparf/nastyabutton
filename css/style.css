@@ -16,10 +16,6 @@
 
 /* ------------------------------ default properties ------------------------------ */
 
-html, body {
-    overflow-y: hidden;
-    position: fixed;
-}
 
 .page{
     margin: 0;
@@ -79,19 +75,21 @@ html, body {
 @media screen 
 and (max-device-width: 812px){
 
+    /*added in order to disable scrolling on iPhones*/
+    html, body {
+        overflow-y: hidden;
+        position: fixed;
+    }
+
     .money{
-        margin: 0px;
         margin-top: 18vh;
-        font-family: "SFProRounded";
         font-size: 80px;
-        font-weight: bold;
     }
 
     .text{
         font-size: 40px;
         margin-top: 16px;
         padding: 0% 17%;
-        text-align: center;
     }
 
     .footer *{
