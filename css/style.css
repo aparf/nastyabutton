@@ -71,9 +71,12 @@
 /* ------------------------------ optimisation for mobile ------------------------------ */
 @media only screen 
 and (max-device-width: 812px){ 
-    .page{
-    min-height: 100vh;
-}
+    html, body {
+      overflow-x: hidden;
+    }
+    body {
+      position: relative;
+  }
     .money{
         margin-top: 25vh;
         font-family: "SFProRounded";
@@ -99,6 +102,6 @@ and (max-device-width: 812px){
     color: red;
     padding-bottom: 22px;
     font-size: 20px;
-    color: rgba(170, 165, 165, 1);
+    /*color: rgba(170, 165, 165, 1);*/
 }
 }
