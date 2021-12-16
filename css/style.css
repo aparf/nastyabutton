@@ -43,6 +43,7 @@
 .text{
     margin-top: 25px;
     padding: 0% 6%;
+    text-align: center;
 }
 
 
@@ -65,3 +66,23 @@
     color: rgba(170, 165, 165, 1);
 }
 
+/* ------------------------------ optimisation for mobile ------------------------------ */
+@media only screen 
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3){ 
+    .money{
+        margin-top: 15%;
+        font-family: "SFProRounded";
+        font-size: 80px;
+        font-weight: bold;
+        color: red;
+    }
+
+.text{
+    font-size: 40px;
+    margin-top: 25px;
+    padding: 0% 6%;
+    text-align: center;
+}
+
+}
