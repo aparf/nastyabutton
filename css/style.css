@@ -69,9 +69,11 @@
 /* ------------------------------ optimisation for mobile ------------------------------ */
 @media only screen 
 and (max-device-width: 812px){ 
-
+    .page{
+    min-height: 100vh;
+}
     .money{
-        margin-top: 27vh;
+        margin-top: 25vh;
         font-family: "SFProRounded";
         font-size: 80px;
         font-weight: bold;
@@ -79,7 +81,7 @@ and (max-device-width: 812px){
     .text{
     font-size: 40px;
     margin-top: 16px;
-    padding: 0% 8%;
+    padding: 0% 10%;
     text-align: center;
     }
 
