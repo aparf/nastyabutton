@@ -16,7 +16,7 @@
 
 /* ------------------------------ default properties ------------------------------ */
 .page{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: "SFProRounded";
@@ -34,7 +34,7 @@
 }
 
 .money{
-    margin-top: 15%;
+    margin-top: 32vh;
     font-family: "SFProRounded";
     font-size: 110px;
     font-weight: bold;
@@ -53,7 +53,7 @@
 }
 
 .footer *{
-    padding: 6px 0px;
+    padding: 3px 0px;
 }
 
 .date{
@@ -68,22 +68,33 @@
 
 /* ------------------------------ optimisation for mobile ------------------------------ */
 @media only screen 
-  and (max-device-width: 812px)
-/*  and (-webkit-min-device-pixel-ratio: 3)*/
-  { 
+and (max-device-width: 812px){ 
+
     .money{
-        margin-top: 50%;
+        margin-top: 27vh;
         font-family: "SFProRounded";
         font-size: 80px;
         font-weight: bold;
-        color: red;
+    }
+    .text{
+    font-size: 40px;
+    margin-top: 16px;
+    padding: 0% 8%;
+    text-align: center;
     }
 
-.text{
-    font-size: 40px;
-    margin-top: 25px;
-    padding: 0% 6%;
-    text-align: center;
+    .footer *{
+    padding: 5px 0px;
+    }
+
+.date{
+    font-size: 30px;
 }
 
+.company{
+    /*color: red;*/
+    padding-bottom: 22px;
+    font-size: 20px;
+    color: rgba(170, 165, 165, 1);
+}
 }
