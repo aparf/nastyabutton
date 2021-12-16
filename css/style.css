@@ -16,6 +16,8 @@
 
 /* ------------------------------ default properties ------------------------------ */
 .page{
+    margin: 0;
+    overflow: hidden;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -73,7 +75,7 @@ and (max-device-width: 812px){
     min-height: 100vh;
 }
     .money{
-        margin-top: 20vh;
+        margin-top: 25vh;
         font-family: "SFProRounded";
         font-size: 80px;
         font-weight: bold;
@@ -94,7 +96,7 @@ and (max-device-width: 812px){
 }
 
 .company{
-    /*color: red;*/
+    color: red;
     padding-bottom: 22px;
     font-size: 20px;
     color: rgba(170, 165, 165, 1);
