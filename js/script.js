@@ -1,9 +1,9 @@
-// Disable scrolling.
-document.ontouchmove = function (e) {
-  e.preventDefault();
-}
 
 window.addEventListener("load",function(){
+	// Disable scrolling.
+	document.ontouchmove = function (e) {
+	  e.preventDefault();
+	}
 	function parseData(url){
 		let xhr = new XMLHttpRequest();
 		xhr.open('GET', url, false);
