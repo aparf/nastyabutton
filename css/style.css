@@ -15,6 +15,12 @@
 }
 
 /* ------------------------------ default properties ------------------------------ */
+
+html, body {
+    overflow-y: hidden;
+    /*position: fixed;*/
+}
+
 .page{
     margin: 0;
     overflow: hidden;
@@ -73,14 +79,9 @@
 @media screen 
 and (max-device-width: 812px){
 
-    html, body {
-        overflow-y: hidden;
-        /*position: fixed;*/
-    }
-
     .money{
         margin: 0px;
-        margin-top: 20vh;
+        margin-top: 18vh;
         font-family: "SFProRounded";
         font-size: 80px;
         font-weight: bold;
@@ -106,5 +107,6 @@ and (max-device-width: 812px){
         padding-bottom: 16vh;
         font-size: 20px;
         color: rgba(170, 165, 165, 1);
+        color: green;
     }
 }
